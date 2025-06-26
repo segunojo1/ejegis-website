@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Phone, Menu, X } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,14 +18,13 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="bg-white shadow-lg sticky top-0 z-50">
+    <nav className="bg-white shadow-lg st
+    icky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <div className="text-2xl font-bold text-navy-900">
-              EJEGIS <span className="text-navy-600">LTD.</span>
-            </div>
+            <Image src="/logo.png" alt="" width={100} height={100}/>
           </Link>
 
           {/* Desktop Navigation */}
@@ -32,7 +32,7 @@ const Navigation = () => {
             {navigation.map((item) => (
               <Link
                 key={item.name}
-                to={item.href}
+                href={item.href}
                 className="text-gray-700 hover:text-navy-600 px-3 py-2 text-sm font-medium transition-colors duration-200"
               >
                 {item.name}
@@ -46,7 +46,7 @@ const Navigation = () => {
               <Phone className="h-4 w-4 mr-2" />
               +234 916 000 8950
             </div>
-            <Link to="/quote">
+            <Link href="/quote">
               <Button className="bg-navy-600 hover:bg-navy-700 text-white">
                 Request a Quote
               </Button>
@@ -71,7 +71,7 @@ const Navigation = () => {
               {navigation.map((item) => (
                 <Link
                   key={item.name}
-                  to={item.href}
+                  href={item.href}
                   className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-navy-600 hover:bg-gray-50 rounded-md"
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -83,7 +83,7 @@ const Navigation = () => {
                   <Phone className="h-4 w-4 mr-2" />
                   +234 916 000 8950
                 </div>
-                <Link to="/quote" onClick={() => setIsMenuOpen(false)}>
+                <Link href="/quote" onClick={() => setIsMenuOpen(false)}>
                   <Button className="w-full bg-navy-600 hover:bg-navy-700 text-white">
                     Request a Quote
                   </Button>
