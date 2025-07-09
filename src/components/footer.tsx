@@ -1,5 +1,6 @@
 
 import { Phone, Mail, MapPin } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 const Footer = () => {
@@ -7,11 +8,11 @@ const Footer = () => {
     <footer className="bg-gradient-to-br from-[#1e1e1e] via-[#2a2a2a] to-gray-800 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Company Info */}
+
           <div className="col-span-1 md:col-span-1">
-            <div className="text-2xl font-bold mb-4">
-              EJEGIS <span className="text-blue-400">LTD.</span>
-            </div>
+            <Link href="/" className="flex items-center">
+              <Image src="/logo.png" alt="" width={200} height={150} />
+            </Link>
             <p className="text-gray-300 mb-4">
               Your Partner for Aviation Compliance and Surface Safety.
             </p>

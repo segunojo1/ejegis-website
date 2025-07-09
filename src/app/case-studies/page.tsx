@@ -81,14 +81,14 @@ const CaseStudies = () => {
           <div className="space-y-16">
             {caseStudies.map((study, index) => (
               <Card key={index} className="border-0 shadow-xl overflow-hidden">
-                <div className="bg-navy-50 px-8 py-6 border-b">
+                <div className="bg-orange-50 px-8 py-6 border-b">
                   <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
                     <h3 className="text-2xl font-bold text-gray-900 mb-2 lg:mb-0">{study.title}</h3>
                     <div className="flex flex-wrap gap-2">
-                      <Badge variant="secondary" className="bg-navy-100 text-navy-800">
+                      <Badge variant="secondary" className="bg-orange-100 text-orange-800">
                         {study.industry}
                       </Badge>
-                      <Badge variant="outline" className="border-navy-600 text-navy-600">
+                      <Badge variant="outline" className="border-orange-600 text-orange-600">
                         {study.client}
                       </Badge>
                     </div>
@@ -118,7 +118,7 @@ const CaseStudies = () => {
 
                       <div>
                         <h4 className="text-lg font-semibold text-gray-900 mb-3 flex items-center">
-                          <CheckCircle className="h-5 w-5 mr-2 text-blue-600" />
+                          <CheckCircle className="h-5 w-5 mr-2 text-orange-600" />
                           EJEGIS LTD. Solution
                         </h4>
                         <p className="text-gray-600">{study.solution}</p>
@@ -160,7 +160,7 @@ const CaseStudies = () => {
       </section>
 
       {/* Success Metrics */}
-      <section className="py-20 bg-navy-900 text-white">
+      <section className="py-20 bg-orange-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Our Track Record</h2>
@@ -169,22 +169,22 @@ const CaseStudies = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-400 mb-2">100%</div>
+              <div className="text-4xl font-bold text-orange-400 mb-2">100%</div>
               <div className="text-lg font-semibold mb-2">Success Rate</div>
               <div className="text-gray-300">All projects completed successfully</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-400 mb-2">50+</div>
+              <div className="text-4xl font-bold text-orange-400 mb-2">50+</div>
               <div className="text-lg font-semibold mb-2">Projects Delivered</div>
               <div className="text-gray-300">Across various industries</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-400 mb-2">95%</div>
+              <div className="text-4xl font-bold text-orange-400 mb-2">95%</div>
               <div className="text-lg font-semibold mb-2">Client Satisfaction</div>
               <div className="text-gray-300">Consistently high ratings</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-400 mb-2">Zero</div>
+              <div className="text-4xl font-bold text-orange-400 mb-2">Zero</div>
               <div className="text-lg font-semibold mb-2">Compliance Issues</div>
               <div className="text-gray-300">Perfect regulatory track record</div>
             </div>
@@ -200,10 +200,10 @@ const CaseStudies = () => {
             Let us help you achieve the same level of success and compliance that our clients experience
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/quote" className="bg-navy-600 hover:bg-navy-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+            <a href="/quote" className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
               Start Your Project
             </a>
-            <a href="/contact" className="border-2 border-navy-600 text-navy-600 hover:bg-navy-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+            <a href="/contact" className="border-2 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-colors">
               Discuss Your Needs
             </a>
           </div>

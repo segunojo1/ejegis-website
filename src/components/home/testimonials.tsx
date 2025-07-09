@@ -22,7 +22,7 @@ const Testimonial = () => {
                   "EJEGIS LTD.'s expertise was invaluable in securing our helipad certification. Their guidance simplified a complex process."
                 </p>
                 <div className="flex items-center">
-                  <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-4">
+                  <div className="w-12 h-12 bg-orange-100/80 rounded-full flex items-center justify-center mr-4">
                     <Users className="h-6 w-6 text-orange-600" />
                   </div>
                   <div>
@@ -44,7 +44,7 @@ const Testimonial = () => {
                   "The friction testing provided by EJEGIS LTD. gave us critical insights into our industrial floor's safety performance."
                 </p>
                 <div className="flex items-center">
-                  <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-4">
+                  <div className="w-12 h-12 bg-orange-100/80 rounded-full flex items-center justify-center mr-4">
                     <Users className="h-6 w-6 text-orange-600" />
                   </div>
                   <div>

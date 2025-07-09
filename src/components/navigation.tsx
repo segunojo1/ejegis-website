@@ -33,7 +33,7 @@ const Navigation = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-navy-600 px-3 py-2 text-sm font-medium transition-colors duration-200"
+                className="text-gray-700 hover:text-orange-600 px-3 py-2 text-sm font-medium transition-colors duration-200"
               >
                 {item.name}
               </Link>
@@ -47,7 +47,7 @@ const Navigation = () => {
               +234 916 000 8950
             </div>
             <Link href="/quote">
-              <Button className="bg-navy-600 hover:bg-navy-700 text-white">
+              <Button className="bg-orange-600 hover:bg-orange-700 text-white">
                 Request a Quote
               </Button>
             </Link>
@@ -57,7 +57,7 @@ const Navigation = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-700 hover:text-navy-600 p-2"
+              className="text-gray-700 hover:text-orange-600 p-2"
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -72,7 +72,7 @@ const Navigation = () => {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-navy-600 hover:bg-gray-50 rounded-md"
+                  className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-orange-600 hover:bg-gray-50 rounded-md"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
@@ -84,7 +84,7 @@ const Navigation = () => {
                   +234 916 000 8950
                 </div>
                 <Link href="/quote" onClick={() => setIsMenuOpen(false)}>
-                  <Button className="w-full bg-navy-600 hover:bg-navy-700 text-white">
+                  <Button className="w-full bg-orange-600 hover:bg-orange-700 text-white">
                     Request a Quote
                   </Button>
                 </Link>

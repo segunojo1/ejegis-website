@@ -119,7 +119,7 @@ const Resources = () => {
               <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between mb-4">
-                    <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">
                       {post.category}
                     </span>
                     <div className="flex items-center text-gray-500 text-sm">
@@ -135,7 +135,7 @@ const Resources = () => {
                   </p>
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-gray-500">{post.date}</span>
-                    <Button variant="outline" size="sm" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white">
+                    <Button variant="outline" size="sm" className="border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white">
                       Read More
                     </Button>
                   </div>
@@ -186,8 +186,8 @@ const Resources = () => {
               <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                      <FileText className="h-6 w-6 text-blue-600" />
+                    <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-4">
+                      <FileText className="h-6 w-6 text-orange-600" />
                     </div>
                     <div>
                       <div className="text-sm text-gray-500">{download.type}</div>
@@ -200,7 +200,7 @@ const Resources = () => {
                   <p className="text-gray-600 mb-6">
                     {download.description}
                   </p>
-                  <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+                  <Button className="w-full bg-orange-600 hover:bg-orange-700 text-white">
                     <Download className="h-4 w-4 mr-2" />
                     Download
                   </Button>
@@ -212,17 +212,17 @@ const Resources = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-blue-900 text-white">
+      <section className="py-20 bg-orange-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold mb-4">Need More Information?</h2>
           <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
             Can't find what you're looking for? Our experts are ready to answer your specific questions
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/contact" className="bg-white text-blue-900 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors">
+            <a href="/contact" className="bg-white text-orange-900 hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold transition-colors">
               Contact Our Experts
             </a>
-            <a href="/quote" className="border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-3 rounded-lg font-semibold transition-colors">
+            <a href="/quote" className="border-2 border-white text-white hover:bg-white hover:text-orange-900 px-8 py-3 rounded-lg font-semibold transition-colors">
               Request a Consultation
             </a>
           </div>

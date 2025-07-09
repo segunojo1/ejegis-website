@@ -1,5 +1,5 @@
 
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Shield, Users, Zap, BookOpen, GraduationCap, Ship, CheckCircle, ArrowRight } from "lucide-react";
 import Link from "next/link";
@@ -111,14 +111,14 @@ const Services = () => {
                 <div className="lg:flex">
                   <div className="lg:w-1/2 p-8 lg:p-12">
                     <div className="flex items-center mb-6">
-                      <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mr-4">
+                      <div className="w-12 h-12 bg-orange-600 rounded-lg flex items-center justify-center mr-4">
                         <service.icon className="h-6 w-6 text-white" />
                       </div>
                       <h3 className="text-2xl font-bold text-gray-900">{service.title}</h3>
                     </div>
                     <p className="text-lg text-gray-600 mb-6">{service.description}</p>
                     <Link href="/quote">
-                      <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+                      <Button className="bg-orange-600 hover:bg-orange-700 text-white">
                         Get Quote
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
@@ -143,7 +143,7 @@ const Services = () => {
       </section>
 
       {/* Why Choose Our Services */}
-      <section className="py-20 bg-blue-900 text-white">
+      <section className="py-20 bg-orange-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Why Choose Our Services</h2>
@@ -154,22 +154,22 @@ const Services = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-400 mb-2">15+</div>
+              <div className="text-3xl font-bold text-orange-400 mb-2">15+</div>
               <div className="text-lg font-semibold mb-2">Years Experience</div>
               <div className="text-gray-300">Deep industry knowledge and regulatory expertise</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-400 mb-2">100%</div>
+              <div className="text-3xl font-bold text-orange-400 mb-2">100%</div>
               <div className="text-lg font-semibold mb-2">Compliance Rate</div>
               <div className="text-gray-300">Perfect track record of successful certifications</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-400 mb-2">24/7</div>
+              <div className="text-3xl font-bold text-orange-400 mb-2">24/7</div>
               <div className="text-lg font-semibold mb-2">Support</div>
               <div className="text-gray-300">Dedicated client support throughout projects</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-400 mb-2">50+</div>
+              <div className="text-3xl font-bold text-orange-400 mb-2">50+</div>
               <div className="text-lg font-semibold mb-2">Satisfied Clients</div>
               <div className="text-gray-300">Trusted by leading organizations across Nigeria</div>
             </div>
@@ -186,12 +186,12 @@ const Services = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/quote">
-              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
+              <Button size="lg" className="bg-orange-600 hover:bg-orange-700 text-white">
                 Request a Quote
               </Button>
             </Link>
             <Link href="/contact">
-              <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white">
+              <Button size="lg" variant="outline" className="border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white">
                 Contact Us
               </Button>
             </Link>

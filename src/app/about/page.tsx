@@ -1,4 +1,5 @@
 
+import AboutHero from "@/components/about/hero";
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, Target, Heart, Award, Shield, CheckCircle } from "lucide-react";
 
@@ -6,9 +7,7 @@ const About = () => {
   return (
     <div className="min-h-screen bg-white">
       
-      {/* Hero Section */}
-      
-
+      <AboutHero />
       {/* Our Story */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -28,19 +27,19 @@ const About = () => {
             <div className="bg-service-gradient p-8 rounded-2xl">
               <div className="grid grid-cols-2 gap-6 text-center">
                 <div>
-                  <div className="text-3xl font-bold text-blue-900 mb-2">15+</div>
+                  <div className="text-3xl font-bold text-orange-900 mb-2">15+</div>
                   <div className="text-gray-600">Years Experience</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-blue-900 mb-2">100+</div>
+                  <div className="text-3xl font-bold text-orange-900 mb-2">100+</div>
                   <div className="text-gray-600">Projects Completed</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-blue-900 mb-2">50+</div>
+                  <div className="text-3xl font-bold text-orange-900 mb-2">50+</div>
                   <div className="text-gray-600">Satisfied Clients</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-blue-900 mb-2">100%</div>
+                  <div className="text-3xl font-bold text-orange-900 mb-2">100%</div>
                   <div className="text-gray-600">Compliance Rate</div>
                 </div>
               </div>
@@ -55,7 +54,7 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card className="border-0 shadow-lg h-full">
               <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Target className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
@@ -67,7 +66,7 @@ const About = () => {
 
             <Card className="border-0 shadow-lg h-full">
               <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Shield className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
@@ -79,7 +78,7 @@ const About = () => {
 
             <Card className="border-0 shadow-lg h-full">
               <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Heart className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Values</h3>
@@ -106,20 +105,20 @@ const About = () => {
             <Card className="border-0 shadow-lg">
               <CardContent className="p-8">
                 <div className="flex items-center mb-6">
-                  <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mr-4">
+                  <div className="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mr-4">
                     <Users className="h-8 w-8 text-white" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-gray-900">Ekpoanwan Inyang</h3>
-                    <p className="text-blue-600 font-medium">Lead Consultant</p>
+                    <p className="text-orange-600 font-medium">Lead Consultant</p>
                   </div>
                 </div>
                 <p className="text-gray-600 mb-4">
                   A seasoned aviation professional with 15+ years of experience in regulatory compliance and safety management.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">QMS ISO 009 Certified</span>
-                  <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">ICAO Certified</span>
+                  <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">QMS ISO 009 Certified</span>
+                  <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm">ICAO Certified</span>
                 </div>
               </CardContent>
             </Card>
@@ -152,7 +151,7 @@ const About = () => {
       </section>
 
       {/* What Makes Us Different */}
-      <section className="py-20 bg-blue-900 text-white">
+      <section className="py-20 bg-orange-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">What Makes Us Different</h2>
@@ -161,7 +160,7 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Award className="h-8 w-8 text-white" />
+                <Award className="h-8 w-8 text-orange-600" />
               </div>
               <h3 className="text-xl font-bold mb-3">Local Expertise, Global Standards</h3>
               <p className="text-gray-300">
@@ -171,7 +170,7 @@ const About = () => {
 
             <div className="text-center">
               <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Shield className="h-8 w-8 text-white" />
+                <Shield className="h-8 w-8 text-orange-600" />
               </div>
               <h3 className="text-xl font-bold mb-3">Holistic Solutions</h3>
               <p className="text-gray-300">
@@ -181,7 +180,7 @@ const About = () => {
 
             <div className="text-center">
               <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <CheckCircle className="h-8 w-8 text-white" />
+                <CheckCircle className="h-8 w-8 text-orange-600" />
               </div>
               <h3 className="text-xl font-bold mb-3">Proactive Problem Solving</h3>
               <p className="text-gray-300">
@@ -191,7 +190,7 @@ const About = () => {
 
             <div className="text-center">
               <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Heart className="h-8 w-8 text-white" />
+                <Heart className="h-8 w-8 text-orange-600" />
               </div>
               <h3 className="text-xl font-bold mb-3">Unwavering Commitment</h3>
               <p className="text-gray-300">
