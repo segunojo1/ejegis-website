@@ -1,4 +1,4 @@
-@import url('https://fonts.cdnfonts.com/css/satoshi');
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -122,6 +122,6 @@
   }
 }
 
-.satoshi{
-    font-family: 'Satoshi', sans-serif;                                             
+.satoshi {
+    font-family: var(--font-satoshi), system-ui, sans-serif;
 }

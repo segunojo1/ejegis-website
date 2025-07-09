@@ -161,7 +161,7 @@ const Contact = () => {
             <div className="aspect-w-16 aspect-h-9 bg-gray-200 rounded-lg flex items-center justify-center">
               <div className="text-center">
                 <MapPin className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.127589204409!2d3.3404160776969936!3d6.505528976692763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8c2249bf8405%3A0xd3a48f2aff9d37c!2s1%20Aderibigbe%20St%2C%20Ikate%2C%20Lagos%20101241%2C%20Lagos!5e0!3m2!1sen!2sng!4v1751971631155!5m2!1sen!2sng" width="600" height="450" style={{border: 0}} allowFullScreen={false} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.127589204409!2d3.3404160776969936!3d6.505528976692763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8c2249bf8405%3A0xd3a48f2aff9d37c!2s1%20Aderibigbe%20St%2C%20Ikate%2C%20Lagos%20101241%2C%20Lagos!5e0!3m2!1sen!2sng!4v1751971631155!5m2!1sen!2sng" className="w-full h-full rounded-lg md:w-[600px] md:h-[450px]" style={{border: 0}} allowFullScreen={false} loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                 <p className="text-sm text-gray-500 mt-2">1 Aderibigbe street, kilo bustop, Surulere, Lagos</p>
               </div>
             </div>
