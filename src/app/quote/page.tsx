@@ -278,7 +278,7 @@ const Quote = () => {
                     <div className="flex items-center">
                       <Mail className="h-5 w-5 text-orange-600 mr-3" />
                       <div>
-                        <div className="font-semibold text-gray-900">info@ejegis.com</div>
+                        <div className="font-semibold text-gray-900">contact@ejegis.com</div>
                         <div className="text-sm text-gray-600">24hr response time</div>
                       </div>
                     </div>

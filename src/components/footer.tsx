@@ -56,7 +56,7 @@ const Footer = () => {
               </div>
               <div className="flex items-start">
                 <Mail className="h-5 w-5 mr-3 mt-0.5 flex-shrink-0" />
-                <span>info@ejegis.com</span>
+                <span>contact@ejegis.com</span>
               </div>
               <div className="flex items-start">
                 <MapPin className="h-5 w-5 mr-3 mt-0.5 flex-shrink-0" />
