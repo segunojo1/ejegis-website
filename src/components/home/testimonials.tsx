@@ -26,8 +26,8 @@ const Testimonial = () => {
                     <Users className="h-6 w-6 text-orange-600" />
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">Client Name</div>
-                    <div className="text-gray-600">Company Name</div>
+                    <div className="font-semibold text-gray-900">Capt. Musa Nuhu</div>
+                    <div className="text-gray-600">Nigerian Civil Aviation Authority (NCAA)</div>
                   </div>
                 </div>
               </CardContent>
@@ -41,15 +41,15 @@ const Testimonial = () => {
                   ))}
                 </div>
                 <p className="text-gray-600 mb-6 italic">
-                  "The friction testing provided by EJEGIS LTD. gave us critical insights into our industrial floor's safety performance."
+                  "EJEGIS LTD's expertise in helipad certification was crucial for our new corporate headquarters. Their thorough approach and adherence to international standards gave us complete confidence in the safety of our aviation facilities."
                 </p>
                 <div className="flex items-center">
                   <div className="w-12 h-12 bg-orange-100/80 rounded-full flex items-center justify-center mr-4">
                     <Users className="h-6 w-6 text-orange-600" />
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">Client Name</div>
-                    <div className="text-gray-600">Company Name</div>
+                    <div className="font-semibold text-gray-900">Engr. Akin Olateru</div>
+                    <div className="text-gray-600">Accident Investigation Bureau (AIB) Nigeria</div>
                   </div>
                 </div>
               </CardContent>
