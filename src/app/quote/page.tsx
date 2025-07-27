@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react";
+import { useState, FormEvent } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -9,8 +9,19 @@ import { Label } from "@/components/ui/label";
 import { CheckCircle, Clock, Phone, Mail } from "lucide-react";
 import { toast } from "sonner";
 
+type FormData = {
+  fullName: string;
+  companyName: string;
+  email: string;
+  phone: string;
+  projectType: string;
+  timeline: string;
+  budget: string;
+  requirements: string;
+};
+
 const Quote = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     fullName: "",
     companyName: "",
     email: "",
@@ -20,25 +31,56 @@ const Quote = () => {
     budget: "",
     requirements: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleInputChange = (field: string, value: string) => {
+  const handleInputChange = (field: keyof FormData, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    console.log("Quote request submitted:", formData);
-    toast("Quote Request Submitted!");
-    setFormData({
-      fullName: "",
-      companyName: "",
-      email: "",
-      phone: "",
-      projectType: "",
-      timeline: "",
-      budget: "",
-      requirements: ""
-    });
+    setIsSubmitting(true);
+    
+    try {
+      const formId = process.env.NEXT_PUBLIC_FORMSPREE_ID;
+      if (!formId) {
+        throw new Error('Formspree form ID is not configured');
+      }
+      
+      const response = await fetch(`https://formspree.io/f/${formId}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          _subject: `New Quote Request from ${formData.fullName} (${formData.companyName})`,
+        }),
+      });
+      
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
+      
+      toast.success('Quote request submitted successfully! We will get back to you soon.');
+      
+      // Reset form
+      setFormData({
+        fullName: "",
+        companyName: "",
+        email: "",
+        phone: "",
+        projectType: "",
+        timeline: "",
+        budget: "",
+        requirements: ""
+      });
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast.error('Failed to submit quote request. Please try again later.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -186,8 +228,13 @@ const Quote = () => {
                       />
                     </div>
 
-                    <Button type="submit" size="lg" className="w-full bg-orange-600 hover:bg-orange-700 text-white">
-                      Submit Request
+                    <Button 
+                      type="submit" 
+                      size="lg" 
+                      className="w-full bg-orange-600 hover:bg-orange-700 text-white"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? 'Submitting...' : 'Submit Request'}
                     </Button>
                   </form>
                 </CardContent>

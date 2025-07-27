@@ -73,10 +73,10 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <div className="text-sm text-gray-400 mb-4 md:mb-0">
+          {/* <div className="text-sm text-gray-400 mb-4 md:mb-0">
             <Link href="/privacy" className="hover:text-white mr-4">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-white">Terms of Service</Link>
-          </div>
+          </div> */}
           <div className="text-sm text-gray-400">
             Operating Hours: Monday - Friday, 8am – 6pm
           </div>
