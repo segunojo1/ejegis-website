@@ -1,42 +1,301 @@
 
+"use client";
+
+import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { BookOpen, FileText, Clock, Download } from "lucide-react";
+import { BookOpen, FileText, Clock, Download, X } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+
+interface BlogPost {
+  id: number;
+  title: string;
+  excerpt: string;
+  content: string;
+  readTime: string;
+  category: string;
+  date: string;
+}
 
 const Resources = () => {
+  const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
   const blogPosts = [
     {
+      id: 1,
       title: "Understanding NCAA's Aviation Height Clearance: A Developer's Guide",
       excerpt: "A comprehensive guide to navigating the NCAA's Aviation Height Clearance requirements for property developers and architects.",
+      content: `
+        <p>When it comes to property development near airports or helipads, understanding and complying with the Nigerian Civil Aviation Authority's (NCAA) Aviation Height Clearance (AHC) requirements is crucial. This guide provides developers and architects with essential information to navigate these regulations effectively.</p>
+        
+        <h3>What is Aviation Height Clearance?</h3>
+        <p>Aviation Height Clearance is a mandatory approval required from the NCAA for any structure that exceeds the height restrictions specified in the Nigerian Civil Aviation Regulations (NCARs). This ensures that buildings, cranes, masts, or any other structures do not pose a hazard to air navigation.</p>
+        
+        <h3>When is AHC Required?</h3>
+        <ul>
+          <li>For any structure exceeding 90 meters in height</li>
+          <li>For any structure within 15km of an airport's reference point</li>
+          <li>For temporary structures like cranes or construction equipment</li>
+          <li>For any structure that might penetrate the obstacle limitation surfaces</li>
+        </ul>
+        
+        <h3>Application Process</h3>
+        <ol>
+          <li>Submit a formal application to the NCAA</li>
+          <li>Provide detailed architectural and engineering drawings</li>
+          <li>Include a topographical survey of the site</li>
+          <li>Submit an Environmental Impact Assessment (EIA) if required</li>
+          <li>Pay the applicable processing fees</li>
+        </ol>
+        
+        <h3>Common Pitfalls to Avoid</h3>
+        <p>Many development projects face delays due to non-compliance with AHC requirements. Common issues include:</p>
+        <ul>
+          <li>Initiating construction before obtaining clearance</li>
+          <li>Incomplete documentation</li>
+          <li>Failure to consider future airspace requirements</li>
+          <li>Not accounting for temporary structures during construction</li>
+        </ul>
+        
+        <p>By understanding and adhering to these requirements early in your project planning, you can avoid costly delays and ensure your development proceeds smoothly while maintaining aviation safety standards.</p>
+      `,
       readTime: "8 min read",
       category: "Compliance",
       date: "March 15, 2024"
     },
     {
+      id: 2,
       title: "The Critical Role of Friction Testing in Helipad Safety",
       excerpt: "Exploring why surface friction testing is essential for helipad safety and how it prevents accidents.",
+      content: `
+        <p>Helipad surface friction is a critical factor in ensuring safe helicopter operations. This article explores the importance of regular friction testing and its impact on aviation safety.</p>
+        
+        <h3>Why Friction Testing Matters</h3>
+        <p>Helicopters rely on proper friction between their landing gear and the helipad surface for safe operations. Insufficient friction can lead to:</p>
+        <ul>
+          <li>Reduced braking effectiveness</li>
+          <li>Increased stopping distances</li>
+          <li>Loss of directional control during landing or takeoff</li>
+          <li>Increased risk of dynamic rollover</li>
+        </ul>
+        
+        <h3>Testing Methods</h3>
+        <p>At EJEGIS LTD., we use advanced testing equipment to measure the coefficient of friction (COF) of helipad surfaces. Our testing process includes:</p>
+        <ol>
+          <li>Pre-inspection of the helipad surface</li>
+          <li>Multiple test runs in different directions</li>
+          <li>Data collection and analysis</li>
+          <li>Detailed reporting with recommendations</li>
+        </ol>
+        
+        <h3>Regulatory Requirements</h3>
+        <p>The NCAA mandates regular friction testing as part of helipad maintenance. The frequency of testing depends on:</p>
+        <ul>
+          <li>Helipad usage frequency</li>
+          <li>Environmental conditions</li>
+          <li>Surface material and age</li>
+          <li>Previous test results</li>
+        </ul>
+        
+        <p>Regular friction testing is not just a regulatory requirement but a critical safety measure that protects lives and assets in helicopter operations.</p>
+      `,
       readTime: "6 min read",
       category: "Safety",
       date: "March 10, 2024"
     },
     {
+      id: 3,
       title: "5 Key Elements of an Effective Heliport Emergency Response Plan",
       excerpt: "Essential components every heliport emergency response plan must include for NCAA compliance.",
+      content: `
+        <p>An effective Emergency Response Plan (ERP) is a critical component of heliport operations. The NCAA requires all certified heliports to maintain a comprehensive ERP. Here are the five key elements that should be included:</p>
+        
+        <h3>1. Emergency Contact Information</h3>
+        <p>Maintain an up-to-date list of emergency contacts including:</p>
+        <ul>
+          <li>Local emergency services</li>
+          <li>Hospital and medical facilities</li>
+          <li>Airport/heliport management</li>
+          <li>Regulatory authorities</li>
+          <li>Key personnel with 24/7 contact details</li>
+        </ul>
+        
+        <h3>2. Emergency Procedures</h3>
+        <p>Detailed response procedures for various emergency scenarios:</p>
+        <ul>
+          <li>Aircraft accidents on or near the heliport</li>
+          <li>Fire and smoke incidents</li>
+          <li>Hazardous material spills</li>
+          <li>Medical emergencies</li>
+          <li>Security threats</li>
+        </ul>
+        
+        <h3>3. Training and Drills</h3>
+        <p>Regular training and emergency drills ensure all personnel are prepared to respond effectively. This should include:</p>
+        <ul>
+          <li>Initial training for new staff</li>
+          <li>Annual refresher courses</li>
+          <li>Tabletop exercises</li>
+          <li>Full-scale emergency drills</li>
+        </ul>
+        
+        <h3>4. Equipment and Resources</h3>
+        <p>Maintain appropriate emergency equipment including:</p>
+        <ul>
+          <li>Firefighting equipment</li>
+          <li>First aid supplies</li>
+          <li>Emergency lighting</li>
+          <li>Communication devices</li>
+        </ul>
+        
+        <h3>5. Review and Update Process</h3>
+        <p>Regularly review and update the ERP to ensure its effectiveness. This includes:</p>
+        <ul>
+          <li>Annual reviews at minimum</li>
+          <li>Updates after any emergency incident</li>
+          <li>Revisions based on regulatory changes</li>
+          <li>Feedback from emergency drills</li>
+        </ul>
+        
+        <p>A well-developed and regularly practiced ERP can significantly improve response times and outcomes during emergency situations.</p>
+      `,
       readTime: "10 min read",
       category: "Emergency Planning",
       date: "March 5, 2024"
     },
     {
+      id: 4,
       title: "Updates to Nigerian Civil Aviation Regulations: What You Need to Know",
       excerpt: "Latest changes to NCAA regulations and their impact on aviation infrastructure projects.",
+      content: `
+        <p>The Nigerian Civil Aviation Authority (NCAA) has recently implemented several important updates to its regulations that affect aviation infrastructure development and operations. Here's what you need to know:</p>
+        
+        <h3>Key Regulatory Updates</h3>
+        <h4>1. Enhanced Safety Management Systems (SMS) Requirements</h4>
+        <p>All aerodrome and heliport operators must now implement enhanced SMS that includes:</p>
+        <ul>
+          <li>More rigorous hazard identification processes</li>
+          <li>Expanded safety reporting requirements</li>
+          <li>Mandatory safety performance indicators</li>
+          <li>Enhanced safety training for all personnel</li>
+        </ul>
+        
+        <h4>2. Revised Helipad Design Standards</h4>
+        <p>The NCAA has updated its helipad design standards to align with ICAO recommendations:</p>
+        <ul>
+          <li>Increased minimum dimensions for new helipads</li>
+          <li>Enhanced lighting and marking requirements</n          <li>Stricter obstacle limitation surfaces</li>
+          <li>Improved drainage specifications</li>
+        </ul>
+        
+        <h4>3. Environmental Compliance</h4>
+        <p>New environmental regulations require:</p>
+        <ul>
+          <li>Noise abatement procedures</li>
+          <li>Emission control measures</li>
+          <li>Wildlife hazard management plans</li>
+          <li>Stormwater management systems</li>
+        </ul>
+        
+        <h4>4. Digital Documentation</h4>
+        <p>The NCAA is moving towards paperless operations with new requirements for:</p>
+        <ul>
+          <li>Electronic submission of applications</li>
+          <li>Digital record-keeping</li>
+          <li>Online payment systems</li>
+          <li>Electronic certificates and approvals</li>
+        </ul>
+        
+        <h3>Compliance Deadlines</h3>
+        <p>The NCAA has established the following compliance deadlines:</p>
+        <ul>
+          <li>New SMS requirements: 6 months from publication</li>
+          <li>Helipad design standards: Apply to all new constructions immediately; existing facilities have 24 months to comply</li>
+          <li>Environmental requirements: Phased implementation over 12 months</li>
+          <li>Digital documentation: 3-month transition period</li>
+        </ul>
+        
+        <p>These regulatory changes aim to enhance safety, security, and environmental protection in Nigerian aviation. EJEGIS LTD. is fully equipped to help clients navigate these changes and ensure compliance.</p>
+      `,
       readTime: "12 min read",
       category: "Regulatory Updates",
       date: "February 28, 2024"
     },
     {
+      id: 5,
       title: "Why Routine Surface Friction Testing Saves Lives and Money",
       excerpt: "The cost-benefit analysis of regular friction testing and its impact on operational safety.",
+      content: `
+        <p>Regular surface friction testing is a critical maintenance activity for any helipad or airport runway. While some operators view it as an unnecessary expense, the reality is that routine testing can save both lives and significant costs in the long run.</p>
+        
+        <h3>Safety Benefits</h3>
+        <p>Regular friction testing helps prevent accidents by:</p>
+        <ul>
+          <li>Identifying deteriorating surface conditions before they become hazardous</li>
+          <li>Ensuring adequate stopping distances for aircraft</n          <li>Preventing hydroplaning during wet conditions</li>
+          <li>Maintaining proper directional control during landing and takeoff</li>
+        </ul>
+        
+        <h3>Financial Benefits</h3>
+        <p>The cost of regular testing is minimal compared to the potential costs of an accident:</p>
+        <table class="w-full border-collapse my-4">
+          <thead>
+            <tr class="bg-gray-100">
+              <th class="border p-2 text-left">Cost Factor</th>
+              <th class="border p-2 text-right">Cost Range (USD)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border p-2">Annual Friction Testing</td>
+              <td class="border p-2 text-right">$1,500 - $3,000</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border p-2">Minor Surface Repairs (if caught early)</td>
+              <td class="border p-2 text-right">$5,000 - $15,000</td>
+            </tr>
+            <tr>
+              <td class="border p-2">Major Surface Repairs (delayed maintenance)</td>
+              <td class="border p-2 text-right">$50,000+</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border p-2">Average Helicopter Accident (minor damage)</td>
+              <td class="border p-2 text-right">$250,000+</td>
+            </tr>
+            <tr>
+              <td class="border p-2">Major Helicopter Accident (severe damage/injuries)</td>
+              <td class="border p-2 text-right">$1,000,000+</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <h3>Regulatory Compliance</h3>
+        <p>Regular testing ensures compliance with NCAA regulations, helping to avoid:</p>
+        <ul>
+          <li>Fines and penalties for non-compliance</li>
+          <li>Operational restrictions or shutdowns</li>
+          <li>Increased insurance premiums</li>
+          <li>Legal liability in case of accidents</li>
+        </ul>
+        
+        <h3>Best Practices</h3>
+        <p>To maximize the benefits of friction testing, follow these best practices:</p>
+        <ol>
+          <li>Test at least twice per year, or more frequently for high-traffic helipads</li>
+          <li>Test after any major weather events or surface repairs</li>
+          <li>Maintain detailed records of all tests and maintenance activities</li>
+          <li>Address any issues identified during testing promptly</li>
+          <li>Work with certified professionals like EJEGIS LTD. for accurate testing and analysis</li>
+        </ol>
+        
+        <p>Investing in regular surface friction testing is a small price to pay for the safety of passengers, crew, and aircraft, while also protecting your financial interests and regulatory standing.</p>
+      `,
       readTime: "7 min read",
       category: "Cost Analysis",
       date: "February 20, 2024"
@@ -92,6 +351,7 @@ const Resources = () => {
   ];
 
   return (
+<>
     <div className="min-h-screen bg-white">
       
       {/* Hero Section */}
@@ -135,7 +395,12 @@ const Resources = () => {
                   </p>
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-gray-500">{post.date}</span>
-                    <Button variant="outline" size="sm" className="border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white">
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      className="border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white"
+                      onClick={() => setSelectedPost(post)}
+                    >
                       Read More
                     </Button>
                   </div>
@@ -229,6 +494,47 @@ const Resources = () => {
         </div>
       </section>
     </div>
+
+    <Dialog 
+      open={!!selectedPost} 
+      onOpenChange={(open) => !open && setSelectedPost(null)}
+    >
+      {selectedPost && (
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <div className="flex items-center justify-between">
+              <div>
+                <span className="inline-block bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium mb-4">
+                  {selectedPost.category}
+                </span>
+                <DialogTitle className="text-2xl mt-2">{selectedPost.title}</DialogTitle>
+                <div className="flex items-center text-gray-500 text-sm mt-2 mb-6">
+                  <span>{selectedPost.date}</span>
+                  <span className="mx-2">•</span>
+                  <Clock className="h-4 w-4 mr-1 inline" />
+                  <span>{selectedPost.readTime}</span>
+                </div>
+              </div>
+            </div>
+          </DialogHeader>
+          <div className="prose max-w-none">
+            <div 
+              className="text-gray-700 leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: selectedPost.content }}
+            />
+          </div>
+          <div className="mt-6 flex justify-end">
+            <Button 
+              onClick={() => setSelectedPost(null)}
+              className="bg-orange-600 hover:bg-orange-700"
+            >
+              Close
+            </Button>
+          </div>
+        </DialogContent>
+      )}
+    </Dialog>
+</>
   );
 };
 
